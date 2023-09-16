@@ -9,8 +9,6 @@
     <li class="nav-item" role="presentation">
       <a class="nav-link <%= active_if('events#past') %>" href="/events/past" role="tab">過去イベント</a>
     </li>
-  </ul>
-
   <div class="row row-cols-1 row-cols-md-3 g-4 mb-3">
     <%= render @events %>
   </div>
