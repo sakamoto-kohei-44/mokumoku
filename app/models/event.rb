@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Event < ApplicationRecord
+  validate :female_only_event
+
   include Notifiable
   belongs_to :prefecture
   belongs_to :user
@@ -26,5 +28,11 @@ class Event < ApplicationRecord
 
   def future?
     !past?
+  end
+
+  def female_only_event
+    if only_women && user.gender != 'woman'
+      errors.add(:base, 'Only women can join this event')
+    end
   end
 end
