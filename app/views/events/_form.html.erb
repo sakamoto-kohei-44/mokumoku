@@ -24,7 +24,7 @@
   <% if current_user.gender == 'woman' %>
     <div class="mb-3">
       <%= f.label :only_women, "Only woman" %>
-      <%= f.check_box :only_women %>
+      <%= f.check_box :only_women, id: 'event_only_woman' %>
     </div>
   <% end %>
   <%= f.submit '登録', class: 'btn btn-primary' %>
