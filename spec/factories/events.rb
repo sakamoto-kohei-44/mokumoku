@@ -10,7 +10,7 @@ FactoryBot.define do
   end
 
   trait :woman_only_event do
-    only_woman { true }
+    only_women { true }
     user { FactoryBot.create(:user, :woman_user) }
   end
 end
