@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to events_path, success: 'ユーザー登録が完了しました'
     else
-      @gender_options = User.genders_i18n.invert
+      @gender_options = User.genders_i18n.inverts
       flash.now[:danger] = 'ユーザー登録に失敗しました'
       render :new
     end

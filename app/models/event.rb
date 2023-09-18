@@ -31,7 +31,7 @@ class Event < ApplicationRecord
   end
 
   def female_only_event
-    if only_women && user.gender != 'woman'
+    if only_women && !user.woman?
       errors.add(:base, 'Only women can join this event')
     end
   end
