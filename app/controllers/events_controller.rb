@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @show_only_women_option = !!current_user&.female?
+    @show_only_women_option = !!current_user&.woman?
   end
 
   def create
@@ -48,7 +48,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = current_user.events.find(params[:id])
-    @show_only_women_option = current_user&.woman?
+    @show_only_women_option = !!current_user&.woman?
   end
 
   def update
